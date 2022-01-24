@@ -9,3 +9,6 @@ This document is to be completed by the entire group together. The document deta
 This document can be filled in and signed electronically. Please discuss this document as a group.
 
 One single document is to be handed in for each group. This should be submitted in the bundle that is submitted on learn.gold by 22/2/21 at 5pm, with the rest of the documents.
+
+Site Topology as follows
+![This is an image](https://miro.medium.com/max/2000/1*tjoajjTY-bV5KdS3dPDAqw.png)
