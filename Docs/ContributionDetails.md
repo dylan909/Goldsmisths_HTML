@@ -5,7 +5,7 @@ Team Member: Oliver
 
 |  Design Contribution  |  Technical Contribution  |
 |  -------------------  |  ----------------------  |
-|     Content Cell      |     Content Cell         |
+|     Content Cell      |     Boilerplate            |
 |     Content Cell      |     Content Cell         |
 	
 
@@ -13,21 +13,21 @@ Team Member: Ned
 
 |  Design Contribution  |  Technical Contribution  |
 |  -------------------  |  ----------------------  |
-|     Content Cell      |     Content Cell         |
+|    Inital Website Theme      |     Content Cell         |
 |     Content Cell      |     Content Cell         |
 
 	
 
-Team Member:
+Team Member: Dylan
 
 |  Design Contribution  |  Technical Contribution  |
 |  -------------------  |  ----------------------  |
-|     Content Cell      |     Content Cell         |
+|     Content Cell      |     Boilerplate         |
 |     Content Cell      |     Content Cell         |
 
 	
 
-Team Member:
+Team Member: 
 
 |  Design Contribution  |  Technical Contribution  |
 |  -------------------  |  ----------------------  |
