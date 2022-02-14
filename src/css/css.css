@@ -1,0 +1,488 @@
+/* Start Font Import */
+@font-face {
+    font-family: PressStart2P;
+    src: url(fonts/PressStart2P-vaV7.ttf);
+}
+/* End Font Import */
+/* Start Site Resize Control */
+@media screen and (max-height: 800px) {
+    html {
+        height: 800px !important;
+        overflow-y: scroll !important;
+    }
+}
+@media screen and (max-width: 1200px) {
+html {
+        width: 1200px !important;
+        overflow-x: scroll !important;
+    }
+}
+/* End of Site Resize Control */
+/* Start Animation Keyframes */
+/* Flicker random flickers generated w python script */
+@keyframes flicker {
+    0% {
+        opacity: 0.17318; 
+    }
+    5% {
+        opacity: 0.48523; 
+    }
+    10% {
+        opacity: 0.49998; 
+    }
+    15% {
+        opacity: 0.96103; 
+    }
+    20% {
+        opacity: 0.10146; 
+    }
+    25% {
+        opacity: 0.48326; 
+    }
+    30% {
+        opacity: 0.52219; 
+    }
+    35% {
+        opacity: 0.67234; 
+    }
+    40% {
+        opacity: 0.38949; 
+    }
+    45% {
+        opacity: 0.29544; 
+    }
+    50% {
+        opacity: 0.43735; 
+    }
+    55% {
+        opacity: 0.73590; 
+    }
+    60% {
+        opacity: 0.33694; 
+    }
+    65% {
+        opacity: 0.36332; 
+    }
+    70% {
+        opacity: 0.71378; 
+    }
+    75% {
+        opacity: 0.16995; 
+    }
+    80% {
+        opacity: 0.56775; 
+    }
+    85% {
+        opacity: 0.4109; 
+    }
+    90% {
+        opacity: 0.76596; 
+    }
+    95% {
+        opacity: 0.53441; 
+    }
+    100% {
+        opacity: 0.08678; 
+    }
+}
+@keyframes blinker {
+    50% {
+      opacity: 0;
+    }
+}
+@keyframes slidein {
+    from {
+      transform: translateY(-150%);
+    }
+  
+    to {
+      transform: translateY(0%);
+    }
+}
+/* End Animation Keyframes */
+/* Set Root Scheme*/
+:root {
+    --main-bg-color:#000000;
+    --secondary-bg-color:#4e0000;
+    --tertiary-bg-color:#d10000;
+    --main-font-color: #ff0000;
+	--secondary-font-color:#4e0000;
+    --tertiary-font-color: #fff;
+	--main-button-color:#ff0000;
+    --main-hover-color: #252525;
+    --forth-bg-color:#333;
+}
+/* End Root Scheme */
+/* Start Hyperlink Color Control */
+a:-webkit-any-link{
+    color: var(--main-font-color);;
+}
+/* End Hyperlink Color Control */
+/* Start CSS Boilerplate */
+* {
+    box-sizing: border-box; 
+}
+  
+html, body {
+    background: var(--tertiary-bg-color);
+    color: var(--main-font-color);
+    padding: 0;
+    height: 100%;
+    margin: 0;
+    font-family: PressStart2P;
+    overflow: hidden;
+}
+
+body {
+    padding: 10px; 
+}
+
+a {
+    text-decoration: none;
+}
+.paddingbottom{
+    padding-bottom: 30px;
+}
+/* End CSS Boilerplate */
+/* Start No Highlighting*/
+.noselect {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+/* End No Highlighting*/
+/* Start Screen Curve*/
+.screen {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    padding: 2% 5%;
+    margin: 0;
+    background: var(--main-bg-color); 
+    z-index: 2;
+}
+.screen.crt-curve-enabled {
+    width: 94%;
+    border-radius: 40% / 2%;
+    padding: 2%;
+    margin: 0 3%; 
+    z-index: 2;
+}
+.screen.crt-curve-enabled:before {
+    content: "";
+    position: absolute;
+    top: 2%;
+    bottom: 2%;
+    right: -2%;
+    left: -2%;
+    background: var(--main-bg-color);
+    border-radius: 2%/40%; 
+}
+.screen.crt-curve-enabled:after {
+    content: "";
+    z-index: 10;
+    position: absolute;
+    top: -2%;
+    left: -2%;
+    right: -2%;
+    bottom: -2%;
+    background-image: radial-gradient(transparent 85%, var(--main-bg-color));
+    opacity: 0.5;
+    box-shadow: inset 0 0 75px 30px var(--main-bg-color), 0 0 0 100px var(--main-bg-color);
+    border-radius: 6.5% / 13%;
+    pointer-events: none; 
+}
+/* End Screen Curve*/
+/* Start Scanlines and Blink*/
+.blink {
+    animation: blinker 2s linear infinite;
+}
+
+.scanlines-enabled:after {
+    content: "";
+    display: block;
+    position: fixed;
+    top: 0;
+    left: -2%;
+    bottom: 0;
+    right: -2%;
+    background: linear-gradient(rgba(0, 43, 54, 0.1) 50%, rgba(0, 0, 0, 0.25) 50%), linear-gradient(90deg, rgba(220, 50, 47, 0.1) 33%, rgba(133, 153, 0, 0.1) 33%, rgba(133, 153, 0, 0.1) 66%, rgba(38, 139, 210, 0.1) 66%);
+    z-index: 2;
+    background-size: 100% 4px, 3px 100%;
+    border-radius: 18px/12px;
+    pointer-events: none; 
+}
+
+.flicker-enabled:after {
+animation: flicker 0.15s infinite; 
+}
+/* End Scanlines and Blink*/
+/* DEVELOPMENT */
+.slidein{
+    animation: slidein 5s;
+}
+
+.message-column {
+    position: relative;
+    display: block;
+    height: 100%;
+}
+
+.message-column .navbar{
+    position: relative;
+    display: flex;
+    height: 100%;
+    align-items: center;
+    text-transform: uppercase;
+    font-size: 150%;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: space-evenly;
+    max-height: 200px;
+}
+
+.message-column .welcomebar{
+    position: relative;
+    display: flex;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    text-transform: uppercase;
+    font-size: 150%; 
+}
+
+.message-column .navbar a{
+    line-height: 50px;
+    padding-left: 10px;
+}
+/* NEED TO SORT FONT SIZING */
+.message-column .navbar a::before, .message-column .welcomebar a::before, .message-column .return-container a:before{
+    content:"[ ";
+    color: var(--main-font-color);
+}
+
+.message-column .navbar a::after, .message-column .welcomebar a::after, .message-column .return-container a:after{
+    content:" ]";
+    color: var(--main-font-color);
+}
+
+.message-column .navbar a:hover, .message-column .welcomebar a:hover, .message-column .return-container a:hover{
+    color: var(--tertiary-font-color);
+}
+
+.message-column .navbar .blink a, a:visited{
+    cursor: grab;
+    color: inherit;
+}
+
+.container{
+    max-height: 87%;
+    overflow-y: scroll;
+}
+
+.logo-container{
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.logo-container .logo{
+    display: flex;
+    width: 33%;
+    height: 33%;
+    justify-content: center;
+}
+
+.logo img{
+    max-width: 100%;
+    max-height: 100%;
+}
+
+/* Return */
+.return-container{
+    bottom: -15px;
+    width: 100%;
+    display: flex;
+    position: absolute;
+}
+
+/* Collapsible FAQ Bar */
+/* NEED TO ADD CUSTOM 8 BIT SCROLLBAR */
+
+.faq-container > input[name="collapse"] {
+    display: none;
+}
+  
+.faq-container label, 
+.faq-container .content{
+    max-width: 100%;
+    margin: 0 auto;
+}
+
+
+.faq-container .content {
+    overflow: hidden;
+    height: 0;
+    transition: 0.5s;
+    box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.faq-container > input[name="collapse"]:checked ~ .content {
+    height: 380px;
+    transition: height 0.5s;
+}
+
+.faq-container > input[name="collapse"]:checked ~ .content {
+    height: 220px;
+}
+
+.faq-container {
+    margin-bottom: 16px;
+}
+
+.faq-container > input[name="collapse"]:checked ~ .content {
+    border-top: 0;
+    transition: 0.3s;
+}
+
+.faq-container .handle {
+    margin: 0;
+    font-size: 16px;
+    border-color: var(--main-button-color);
+    border-width: 8px;
+    border-style: solid;
+}
+
+.faq-container label {
+    display: block;
+    color: var(--main-font-color);
+    cursor: pointer;
+    font-weight: normal;
+    padding: 10px;
+    max-width: 100%;
+}
+
+.faq-container label:hover, .faq-container label:focus {
+    background: var(--main-hover-color);
+    color: var(--tertiary-font-color);
+}
+
+.faq-container .handle label:before {
+    content: "▲";
+    display: inline-block;
+    color: var(--main-font-color);
+    margin-right: 10px;
+    font-size: 16px;
+    line-height: 25px;
+    vertical-align: middle;
+    transition: 0.2s;
+}
+
+.faq-container > input[name="collapse"]:checked ~ .handle label:before {
+    transform: rotate(180deg);
+    transform-origin: center;
+    transition: 0.2s;
+}
+
+/* TIMELINE */
+
+.timeline {
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.outer {
+border-left: 2px solid var(--forth-bg-color);
+}
+
+.card {
+    position: relative;
+    margin: 0 0 20px 20px;
+    padding: 10px;
+    background: var(--forth-bg-color);
+    color: var(--main-font-color);
+    border-radius: 8px;
+}
+
+.info {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.info .title {
+    color: var(--main-font-color);
+    position: relative;
+}
+
+.info .title::before {
+    content: "";
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background: white;
+    border-radius: 999px;
+    left: -39px;
+    border: 3px solid var(--tertiary-bg-color);
+}
+
+/* TIMELINE END */
+/* INFO START */
+
+.image {
+    background: silver;
+    width: 500px;
+    height: 400px;
+    border-radius: 5px;
+    padding: 20px;
+    color: #efefef;
+    font-size: 8rem;
+}
+.img-right {
+    float: right;
+    margin-left: 20px;
+    max-width: 30%;
+}
+.content {
+    padding: 0 20px;
+}
+
+/* INFO END */
+/* GAMES START
+https://en.wikipedia.org/wiki/List_of_Virtual_Boy_games
+*/
+
+.stack-container{
+    display: flex;
+}
+
+.stack-container .card {
+    /* Add shadows to create the "card" effect */
+    display: flex;
+    margin-right: 0;
+    box-shadow: 0 4px 8px 0 rgba(255, 255, 255, 0.2);
+    transition: 0.3s;
+    max-width: 200px;
+    flex-wrap: wrap;
+}
+
+.stack-container .card img{
+    max-width: 180px;
+    max-height: 180px;
+}
+  
+  /* On mouse-over, add a deeper shadow */
+.stack-container .card:hover {
+    box-shadow: 0 8px 16px 0 rgba(255, 255, 255, 0.2);
+}
+  
+  /* Add some padding inside the card container */
+.stack-container .card .text-container {
+    padding: 2px 16px;
+}
