@@ -99,6 +99,16 @@ html {
       transform: translateY(0%);
     }
 }
+@keyframes crawl {
+    0% {
+      top: -100px;
+      transform: rotateX(20deg)  translateZ(0);
+    }
+    100% { 
+      top: -6000px;
+      transform: rotateX(25deg) translateZ(-2500px);
+    }
+  }
 /* End Animation Keyframes */
 /* Set Root Scheme*/
 :root {
@@ -280,7 +290,7 @@ animation: flicker 0.15s infinite;
 }
 
 .container{
-    max-height: 87%;
+    max-height: 85%;
     overflow-y: scroll;
 }
 
@@ -333,12 +343,12 @@ animation: flicker 0.15s infinite;
 }
 
 .faq-container > input[name="collapse"]:checked ~ .content {
-    height: 380px;
+    height: 220px;
     transition: height 0.5s;
 }
 
 .faq-container > input[name="collapse"]:checked ~ .content {
-    height: 220px;
+    height: 150px;
 }
 
 .faq-container {
@@ -398,7 +408,7 @@ animation: flicker 0.15s infinite;
 }
 
 .outer {
-border-left: 2px solid var(--forth-bg-color);
+    border-left: 2px solid var(--forth-bg-color);
 }
 
 .card {
@@ -426,7 +436,7 @@ border-left: 2px solid var(--forth-bg-color);
     position: absolute;
     width: 10px;
     height: 10px;
-    background: white;
+    background: var(--tertiary-font-color);
     border-radius: 999px;
     left: -39px;
     border: 3px solid var(--tertiary-bg-color);
@@ -435,15 +445,7 @@ border-left: 2px solid var(--forth-bg-color);
 /* TIMELINE END */
 /* INFO START */
 
-.image {
-    background: silver;
-    width: 500px;
-    height: 400px;
-    border-radius: 5px;
-    padding: 20px;
-    color: #efefef;
-    font-size: 8rem;
-}
+
 .img-right {
     float: right;
     margin-left: 20px;
@@ -452,19 +454,19 @@ border-left: 2px solid var(--forth-bg-color);
 .content {
     padding: 0 20px;
 }
+.content h2{
+    text-align: center;
+}
 
 /* INFO END */
 /* GAMES START
 https://en.wikipedia.org/wiki/List_of_Virtual_Boy_games
 */
-
 .stack-container{
     display: flex;
     flex-wrap: wrap;
 }
-
 .stack-container .card {
-    /* Add shadows to create the "card" effect */
     display: flex;
     margin-right: 0;
     box-shadow: 0 4px 8px 0 rgba(255, 255, 255, 0.2);
@@ -473,22 +475,17 @@ https://en.wikipedia.org/wiki/List_of_Virtual_Boy_games
     max-height: 400px;
     flex-wrap: wrap;
 }
-
 .stack-container .card img{
     width: 180px;
     height: 180px;
 }
-  
-  /* On mouse-over, add a deeper shadow */
 .stack-container .card:hover {
     box-shadow: 0 8px 16px 0 rgba(255, 255, 255, 0.2);
 }
-  
-  /* Add some padding inside the card container */
 .stack-container .card .text-container {
     padding: 2px 16px;
 }
-
+/* GAMES END */
 /* Gallery */
 .gallery-container{
     display: flex;
@@ -507,7 +504,7 @@ https://en.wikipedia.org/wiki/List_of_Virtual_Boy_games
     height: auto;
     transition: .5s ease;
     backface-visibility: hidden;
-  }
+}
   
 .img-container .middle {
     transition: .5s ease;
@@ -518,12 +515,42 @@ https://en.wikipedia.org/wiki/List_of_Virtual_Boy_games
     transform: translate(-50%, -50%);
     -ms-transform: translate(-50%, -50%);
     text-align: center;
-  }
+}
   
 .img-container:hover .image {
     opacity: 0.3;
-  }
+}
   
 .img-container:hover .middle {
     opacity: 1;
-  }
+}
+/* Gallery End */
+/* Credits Start */
+.credits {
+    display: flex;
+    justify-content: center;
+    position: relative;
+    color: var(--main-font-color);
+    font-size: 460%;
+    line-height: 150%;
+    perspective: 400px;
+    text-align: center;
+    overflow: hidden;
+}
+
+.crawl {
+    position: relative;
+    transform-origin: 50% 100%;
+    animation: crawl 60s linear;
+}
+
+.crawl > .title {
+    font-size: 90%;
+    text-align: center;
+}
+
+.crawl > .title h1 {
+    margin: 0 0 100px;
+    text-transform: uppercase;
+}
+/* Credits End */
